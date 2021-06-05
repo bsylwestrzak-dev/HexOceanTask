@@ -1,38 +1,334 @@
-.App {
-  text-align: center;
+body{
+  background: #bdc3c7;
+  background: -webkit-linear-gradient(to right, #bdc3c7, #2c3e50);
+  background: linear-gradient(to right, #bdc3c7, #2c3e50);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*  Main Container */ 
+.container{
+  position: relative;
+  width: 90vw;
+  height: 80vh;
+  background: #ffffff;
+  box-shadow: 3px 3px 33px black;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/*  Left Side of Container */ 
+.leftSide{
+  background: url('./assets/hexoceanImage.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  flex:1;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/*  Right Side of Container */ 
+.rightSide{
+  flex: 2;
+  overflow: scroll;
+}
+
+/*  Wave Image in Right Bottom Corner*/ 
+.wave{
+  position: absolute;
+  width: 20vw;
+  bottom: -5px;
+  right: -5px;
+}
+
+/*  Header and Logo Wrap on the Right Side*/ 
+.headerAndLogo{
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
+  padding-top: 10px;
+}
+
+/*  Logo Application */ 
+.logo{
+  width: 100px;
+}
+
+/*  Wrap for Dish Name and Preparation Time Inputs */ 
+.wrap{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 70%;
+}
+
+/*  Wrap for Form*/ 
+.form{
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  padding-top: 10px;
+}
+
+/*  Width of Dish Name and Preparation Time Inputs  */ 
+.MuiFormControl-root{
+  width: 19vw;
+}
+
+label + .MuiInput-formControl {
+  margin: 1px 0px;
+}
+/*  Dish main wrap  */ 
+.dishSection{
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/*  Wrap for 3 div  */ 
+.dishWrap{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+/*  Style for single dish div */ 
+.dish{
+  width: 100px;
+  height: 100px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.pizza{
+  background-image: url('./assets/pizza.png');
+}
+.soup{
+  background-image: url('./assets/soup.png');
+}
+.sandwich{
+  background-image: url('./assets/sandwich.png');
+}
+
+/*  Paragraph above dishtype Section */ 
+.chooseDishTypeText{
+  margin:0;
+  padding: 20px 0px;
+}
+
+/*  Paragraph above single dish div  */ 
+.dishName{
+  text-align: center;
+  margin:0;
+  padding-bottom: 10px;
+}
+
+/*  Color of the slider  */ 
+.MuiSlider-root{
+  color: #2d3f51 !important;
+  width: 400px !important;
+}
+
+/*  Chilli img under the slider  */ 
+.MuiSlider-markLabel{
+  width: 25px;
+  height: 25px;
+  background-image: url('./assets/whitechilli.png') !important;
+  background-size: contain !important;
+  display: block !important;
+}
+
+/*  Chilli img under the slider  */ 
+.MuiSlider-markLabelActive{
+  width: 25px;
+  background-image: url('./assets//chilli.png') !important;
+}
+
+.dishOption{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.dishOption p{
+  margin:0;
+  padding-top: 20px;
+}
+
+.btn{
+  background-color: #2d3f51;
   color: white;
+  border: none;
+  padding: 13px 35px;
+  font-size: 15px;
+  margin: 25px 0px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (min-width: 1600px){
+  .dish{
+    width: 8.69vw;
+    height: 8.69vw;
   }
-  to {
-    transform: rotate(360deg);
+  label + .MuiInput-formControl{
+    font-size: 3vh;
+  }
+  .MuiFormControl-root{
+    margin-top: 2vh !important;
+  }
+  .headerText{
+    font-size: 2.6vh;
+  }
+  .logo{
+    width: 10vh;
+    margin-bottom: 2vh;
+  }
+  .MuiInputLabel-root{
+    font-size: 2.5vh !important;
+  }
+  .MuiInputLabel-formControl.MuiInputLabel-shrink{
+    top: -1.3vh !important;
+  }
+  .chooseDishTypeText{
+    font-size: 2.5vh !important;
+    margin: 3vh;
+  }
+  .dishName{
+    font-size: 2.4vh !important;
+    margin-bottom: 1vh;
+  }
+  .btn{
+    font-size: 2vh !important;
+    padding: 2vh 3vw;
+    margin: 4vh;
+  }
+  .MuiSlider-root{
+    width: 30vw !important;
+  }
+  .w100-lg{
+    width: 100% !important;
+  }
+  .MuiSlider-markLabel{
+    width: 1.7vw;
+    height: 1.7vw;
+  }
+  .MuiSlider-markLabelActive{
+    width: 1.7vw;
+    height: 1.7vw;
+  }
+  .MuiSlider-thumb {
+    width: .7vw !important;
+    height: .7vw !important;
+  }
+  .MuiFormHelperText-root, .error{
+    font-size: 1.5vh !important;
+  }
+  .dishOption{
+    font-size: 2.3vh !important;
+  }
+  .dishHeader {
+    margin: 2vh 0 !important;
+  }
+  .MuiSlider-valueLabel{
+    top: -4vh !important;
+  }
+  .MuiSlider-valueLabel > span {
+    width: 1.5vw !important;
+    height: 1.5vw !important;
+    font-size: 1.1vh;
+  }
+}
+
+@media (max-width: 900px) {
+  .container{
+    height: 90vh;
+    flex-direction: column;
+    position: relative;
+  }
+  .leftSide{
+    background: url('./assets/darkHexOceanImage.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+     background-position: center;
+  }
+  .headerAndLogo{
+    position: absolute; 
+    top:50px;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    color: #ffffff;
+  }
+  .headerText{
+    font-size: 3.5vw;
+    text-shadow: 1px 1px 2px black;
+  }
+  .rightSide{
+    padding-top: 30px;
+  }
+  .logo{
+    content:url("./assets/whiteHexOceanLogo.png");
+    width:12vw;
+    min-width: 100px !important;
+  }
+}
+
+@media (max-width: 742px) {
+  .wrap{
+    flex-direction: column;
+  }
+  .MuiFormControl-root{
+    width: 100% !important;
+    margin-top: 10px !important;
+  }
+  .btn{
+    margin-bottom: 20px;
+  }
+  .MuiSlider-root{
+    width: 60vw !important;
+  }
+  .dishname{
+    width: 100%;
+  }
+}
+
+@media (max-width: 588px) {
+  .dishWrap{
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 477px) {
+  .MuiSlider-root{
+    width: 70vw !important;
+  }
+  .dishTypeSingleWrap{
+    padding-top:20px !important;
+  }
+}
+
+
+.MuiFormHelperText-root{
+  color: red !important;
+}
+
+@media (max-width: 375px){
+  .container{
+    width: 100vw;
+    height: 100vh;
   }
 }
